@@ -13,10 +13,26 @@ direcciòn: RN 22`)
 }
 //condicionales 
 function validar(){
-const calificaciòn = prompt(`ingrese su calificaciòn:`)
+    const calificaciòn = prompt(`ingrese su calificaciòn:`)
+    if(calificaciòn >= 7){
+        alert(`estas aprobado`)
+    }else{
+        alert(`nos veremos a diciembre!!!1!!!!!!!!11!!!1!1!11111!!1!11!2!`)}
 
-if(calificaciòn >= 7){
-    alert(`estas aprobado`)
-}else{
-    alert(`nos veremos a diciembre!!!1!!!!!!!!11!!!1!1!11111!!1!11!2!`)}
+    //expresiòn ternario
+    (calificaciòn >=7) ? alert('estas aprobado') :alert ('desaprobado')
+}
+
+//funcion con retorno y comunicacion entre funciones
+function calcular(){
+    const number = prompt('ingresa un numero:');
+    const resultado = number * 10
+    return resultado
+}
+
+function visualizar()
+{
+    //invocamos(ejecutamos) la funcion calcular
+    const respuesta = calcular()
+    alert (respuesta)
 }
