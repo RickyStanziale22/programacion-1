@@ -1,6 +1,19 @@
 function analiza(F)
 {
-    const resultado 
+    let resultado = null
+    if(F >= 14 && F <= 32 ){
+       resultado = "Temperatura Baja"
+    }else{
+        if(F >32 && F <= 68){
+            resultado = "Temperatura Adecuada"
+        }else{
+            if(F >68 && F <= 96){
+                resultado = "Temperatura Alta"
+            }else{
+                resultado = "Temperatura Desconocida"
+            }
+        }
+    }
     return resultado
 }
 
