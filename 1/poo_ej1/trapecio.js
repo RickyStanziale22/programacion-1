@@ -7,7 +7,7 @@ this.altura = alt
 }
  calcular_trapecio()
 {
- let area = (bma + bme / 2) * alt
+ let area = ((Number(this.basemayor) + Number(this.basemenor))/2)*this.altura
  return area
  
 }
