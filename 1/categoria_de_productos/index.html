@@ -4,25 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <title>Document</title>
+    <title>loyd</title>
+    <Link rel="stylesheet" href="bootstrap.min.css"></Link>
 </head>
 <body>
-    <nav class="navbar navbar-dark" style="background-color: rgb(255, 255, 255);">
+    <nav class="navbar navbar-expand-lg" style="background-color:#2BE811">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://preview.redd.it/x5zdb61uenb51.jpg?auto=webp&s=af32139cb00636a1764b8fd4abb085bfa22b304e" alt="" width="50" height="50">
-              jhffh
-              </a>
+            <img src="https://elpoderdelconsumidor.org/wp-content/uploads/2022/02/naranja-1.jpg" width="50" height="40">
+            <a class="navbar-brand" href="#">Loyd</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a onclick="obtener_productos('electronics')" class="nav-link active" aria-current="page" href="#">electronics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="obtener_productos('jewelery')" class="nav-link" href="#">jewelery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="obtener_productos('men\'s clothing')" class="nav-link" href="#">men's clothing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="obtener_productos('women\'s clothing')" class="nav-link">women's clothing</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-      <div class="container">
-           <div class="row">
-               <div class="col-lg-6">
 
-               </div>
-           </div>
-      </div>
+    <div class="container mt-5">
+
+        <div id="catalogo" class="row">
+
+        </div>
+
+    </div>
+
   <script src="main.js"></script>
 </body>
 </html>
