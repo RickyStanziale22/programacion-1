@@ -1,6 +1,6 @@
 function descontar( ){
     const precio = document.getElementById("auto").value 
- let resultado = null
+    let resultado = null
     if(precio == 1950000 ){
        resultado = 1950000 - (1950000*0.05)
        
