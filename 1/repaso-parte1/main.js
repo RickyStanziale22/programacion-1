@@ -18,23 +18,9 @@ console.log(consolas)
 // función flecha del punto E 
 
 const imprimir = () => {
- //como conocer la longitud de array
-const longitud = consolas.length
- let Longitud = 'longitud:'+longitud
-
-//como accedo al ùltimo elemento
-const ultimo = consolas [longitud-1]
- let Ultimoelemento = 'Ûltimo elemento:'+ultimo
-
-//como obtener la posicion de un elemento 
-const indice = consolas.indexOf("Xbox")
-        let Indice = 'Îndice obtenido: '+indice
+ const longitud =consolas.length;
+ const ultimo = consolas[longitud-1]
+ const xbox = consolas[2]
+ document.getElementById("respuesta").textContent = 'La longitud del arreglo es:'+longitud+ 'El ultimo elemento es:'+ultimo +'Xbox esta posicionada en:'+xbox 
 }
-
-const mostrar = () =>{
-    //Ejecutando la funcion
-    const respuesta = imprimir(Longitud,Ultimoelemento,Indice)
-
-    document.getElementById("h_resultado").textContent = respuesta
-}
-
+ // punto F
