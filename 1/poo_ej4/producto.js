@@ -1,6 +1,38 @@
 export default class Producto{
 
-    constructor(){}
+    constructor(d,pv,c){
+        this.descripcion = d
+        this.precio_venta = pv
+        this.categoria = c
+    }
 
-    guardar_producto()
+    //metodo
+    guardar_producto(){
+
+        let nuevo_producto ={
+            descripcion: this.descripcion,
+            precio_venta: this.precio_venta,
+            categoria: this.categoria
+        }
+
+        if("productos" in localStorage){
+            /*
+             covertimos el JSON obtenido desde el storage en una expresion nativa de JavaScript
+             */
+            let lista_productos = JSON.parse( localStorage.getItem("productos"))
+            lista_productos.push(nuevo_producto)
+            localStorage.setItem("producto", JSON.stringify(lista_productos))
+        }else{
+         let lista_productos = []
+         lista_productos.push(nuevo_producto)
+        
+         //guardar en el storge
+         localStorage.setItem("productos", JSON.stringify(lista_productos) )
+        }
+    }
+
+    obtener_productos()
+    {
+        
+    }
 }

@@ -18,29 +18,30 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="mb-3">
-                    <label class="form-label" for="">Descripciòn</label>
-                    <input id="descripcion" type="text">  
+                    <label class="form-label">Descripciòn</label>
+                    <input id="inp_descripcion" class="form-control" type="text">  
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="">Precio De Venta</label>
-                    <input id="precio_de_venta" type="text">
+                    <label class="form-label">Precio De Venta</label>
+                    <input id="inp_precio_venta" class="form-control" type="text">
                 </div>
 
-                <div>
-                    <label for="">Elige El Producto</label>
-                    <select id="select_productos">
-                        <option value="1">NIÑOS</option>
-                        <option value="2">ADOLESCENTES</option>
-                        <option value="3">MUJERES</option>
-                        <option value="4">HOMBRES</option>
+                <div class="mb-3">
+                    <label class="form-label">Elige El Producto</label>
+                    <select id="select_productos" class="form-select" aria-label="default">
+                        <option selected>ELIGA SU PRODUCTO</option>
+                        <option value="1">ELECTRODOMESTICOS</option>
+                        <option value="2">ROPA</option>
+                        <option value="3">DEPORTES</option>
+                        <option value="4">PAELLA</option>
                     </select>
                 </div>
-
+                <div class="mb-3">
+                    <button id="btn_guardar">GUARDAR</button>
+                </div>
             </div>
-
         </div>
-
     </div>
     
     <script src="main.js" type="module"></script>
