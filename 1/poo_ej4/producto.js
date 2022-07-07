@@ -55,8 +55,11 @@ export default class Producto{
                <td>${element.precio_venta}</td>
                <td>${element.categoria}</td>
                <td>
-               <button class="btn btn-danger btn-sm">
+               <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm">
                   <i class="fa fa-trash"></i>
+               </button>
+               <button onclick="editar(${index})" class="btn btn-primary btn-sm">
+               <i class="fa fa-edit"></i>
                </button>
                </td>
             </tr>
@@ -64,5 +67,29 @@ export default class Producto{
             filas.push(fila)
         });
         document.getElementById("tbody").innerHTML = filas.join('')
+    }
+    eliminar_productos(indice)
+    {
+        let lista_productos = JSON.parse(localStorage.getItem("productos"))
+        lista_productos.splice(indice,1)
+        localStorage.setItem("productos", JSON.stringify(lista_productos))
+        this.obtener_productos()
+    }
+    actualizar_producto()
+    {
+        let indice = localStorage.getItem("indice")
+
+        let listado_productos = JSON.parse(localStorage.getItem("productos"))
+
+        listado_productos[indice].descripcion = document.getElementById("inp_descripcion").value
+        listado_productos[indice].precio_venta = document.getElementById("inp_precio_venta").value
+        listado_productos[indice].categoria = document.getElementById("select_productos").value
+
+        localStorage.setItem("productos",JSON.stringify(listado_productos))
+
+        this.obtener_productos()
+
+        document.getElementById("btn_guardar").style.display = "block"
+        document.getElementById("btn_actulizar").style.display = "none"
     }
 }

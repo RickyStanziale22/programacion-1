@@ -40,7 +40,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <button id="btn_guardar">GUARDAR</button>
+                    <button id="btn_guardar" class="btn btn-success">GUARDAR</button>
+                    <button style="display: none;" id="btn_actualizar" class="btn btn-primary">ACTUALIZAR</button>
                 </div>
             </div>
             <div class="col-lg-8">
@@ -60,8 +61,25 @@
                 </table>
             </div>
         </div>
-    </div>
-    
+    </div> 
+    <div id="mymodal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">ELIMINACIÒN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Estas segurin que queres eliminar este pequeño e indefenso archivito</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button id="btn_eliminar" type="button" class="btn btn-danger">¡ELIMINAR EXISTENCIA!</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="main.js" type="module"></script>
+    <script src="auxiliar.js"></script>
 </body>
 </html>
