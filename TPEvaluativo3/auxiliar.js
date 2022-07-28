@@ -5,16 +5,14 @@ localStorage.setItem("indice",indice)
 
 function editar(indice)
 {
-    let lista_productos = JSON.parse(localStorage.getItem("productos"))
+    let lista_respuestos = JSON.parse(localStorage.getItem("repuestas"))
 
-    document.getElementById("inp_descripcion").value = lista_productos[indice].descripcion
-    document.getElementById("inp_precio_venta").value = lista_productos[indice].precio_venta
-    document.getElementById("select_productos").value = lista_productos[indice].categoria
+    document.getElementById("inp_descripcion").value = lista_respuestos[indice].descripcion
+    document.getElementById("inp_precio").value = lista_respuestos[indice].precio
+    document.getElementById("inp_URL").value = lista_respuestos[indice].imagen
+    document.getElementById("inp_detalles").value = lista_respuestos[indice].detalles
 
     localStorage.setItem("indice",indice)
-
-    //apago el boton
     document.getElementById("guardar").style.display = "block"
-    //encendemos el boton actualizar 
     document.getElementById("actualizar").style.display = "none"
 }
