@@ -24,31 +24,43 @@ export default class Repuestos{
          this.obtener_repuestos()
          this.vaciar_el_formulario()
     }
+
+
+
     obtener_repuestos(){
-        let lista_respuestos = JSON.parse(localStorage.getItem("respuestos"))
-        let filas = []
-        lista_respuestos.forEach(element,index => {
-            let fila = `
-            <tr>
-               <td>${index+1}</td>            
-               <td>${element.descripcion}</td>
-               <td>${element.precio}</td>
-               <td>${element.imagen}</td>
-               <td>${element.detalles}</td>
-               <td>
-               <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm">
-                  <i class="fa fa-trash"></i>
-               </button>
-               <button onclick="editar(${index})" class="btn btn-primary btn-sm">
-               <i class="fa fa-edit"></i>
-               </button>
-               </td>
-            </tr>
-            `
-            filas.push(fila)
-        });
-        document.getElementById("tbody").innerHTML = filas.join('')
+
+        if("repuestos" in localStorage){
+            let lista_respuestos = JSON.parse(localStorage.getItem("repuestos"))
+            let filas = []
+            lista_respuestos.forEach( (element,index) => {
+                let fila = `
+                <tr>
+                <td>${index+1}</td>            
+                <td>${element.descripcion}</td>
+                <td>${element.precio}</td>
+                <td>
+                    <img style="width:4rem" src="${element.imagen}">
+                </td>
+                <td>${element.detalles}</td>
+                <td>
+                <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i>
+                </button>
+                <button onclick="editar(${index})" class="btn btn-primary btn-sm">
+                <i class="fa fa-edit"></i>
+                </button>
+                </td>
+                </tr>
+                `
+                filas.push(fila)
+            });
+            document.getElementById("tbody").innerHTML = filas.join('')
+        }
+        
     }
+
+
+
     eleminar_repuestos(indice){
         let lista_respuestos = JSON.parse(localStorage.getItem("repuestos"))
         lista_respuestos.splice(indice,1)
