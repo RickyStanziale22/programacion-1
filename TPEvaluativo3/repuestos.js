@@ -12,27 +12,23 @@ export default class Repuestos{
            imagen: this.imagen,
            detalles: this.detalles
         }
-        if ("respuestos" in localStorage){
-             let lista_respuestos = JSON.parse( localStorage.getItem("repuestos"))
-             lista_respuestos.push(nuevo_repuestos)
-             localStorage.setItem("repuestos", JSON.stringify(lista_respuestos))
+        if ("repuestos" in localStorage){
+             let lista_repuestos = JSON.parse( localStorage.getItem("repuestos"))
+             lista_repuestos.push(nuevo_repuestos)
+             localStorage.setItem("repuestos", JSON.stringify(lista_repuestos))
             }else{
-          let lista_respuestos = []
-          lista_respuestos.push(nuevo_repuestos)
-          localStorage.setItem("repuestos", JSON.stringify(lista_respuestos))
+          let lista_repuestos = []
+          lista_repuestos.push(nuevo_repuestos)
+          localStorage.setItem("repuestos", JSON.stringify(lista_repuestos))
          }
          this.obtener_repuestos()
          this.vaciar_el_formulario()
     }
-
-
-
     obtener_repuestos(){
-
         if("repuestos" in localStorage){
-            let lista_respuestos = JSON.parse(localStorage.getItem("repuestos"))
+            let lista_repuestos = JSON.parse(localStorage.getItem("repuestos"))
             let filas = []
-            lista_respuestos.forEach( (element,index) => {
+            lista_repuestos.forEach( (element,index) => {
                 let fila = `
                 <tr>
                 <td>${index+1}</td>            
@@ -55,16 +51,12 @@ export default class Repuestos{
                 filas.push(fila)
             });
             document.getElementById("tbody").innerHTML = filas.join('')
-        }
-        
+        }   
     }
-
-
-
     eleminar_repuestos(indice){
-        let lista_respuestos = JSON.parse(localStorage.getItem("repuestos"))
-        lista_respuestos.splice(indice,1)
-        localStorage.setItem("repuestos",JSON.stringify(lista_respuestos))
+        let lista_repuestos = JSON.parse(localStorage.getItem("repuestos"))
+        lista_repuestos.splice(indice,1)
+        localStorage.setItem("repuestos",JSON.stringify(lista_repuestos))
         this.obtener_repuestos()
     }
     actualizacion_repuestos(){
